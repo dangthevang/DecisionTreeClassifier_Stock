@@ -11,7 +11,7 @@ def MACD(data,period_long = 26, period_short = 12, period_signal=9,column='close
   data["signal_Line"] = EMA(data, period = period_signal,column = "MACD")
   return data
 
-def RSI(data, period=14,column='close'):
+def RSI(data, period=20,column='close'):
   delta = data[column].diff(1)
   delta = delta.dropna()
   up = delta.copy()
